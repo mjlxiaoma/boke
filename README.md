@@ -13,9 +13,7 @@
 
 <h2 align="center">vuepress-theme-vdoing</h2>
 
- [文档](https://doc.xugaoyi.com/)  |
- [效果](https://xugaoyi.com/)  |
- [本仓库的gitee镜像](https://gitee.com/xugaoyi/vuepress-theme-vdoing)
+ [本仓库的gitee镜像](https://gitee.com/m2075498242/boke.git)
 
 
 ## 介绍
@@ -24,20 +22,16 @@
 3. 博客功能提供一种知识的`碎片化`形态，并支持个性化博客配置。
 4. `简洁高效`，以 Markdown 为中心的项目结构。内置自动化工具，以更少的配置完成更多的事。配合多维索引快速定位每个知识点。
 
-[**更新日志**](https://github.com/xugaoyi/vuepress-theme-vdoing/releases)
+[**更新日志**]
 
 ## 这个主题可以做什么？
-* 案例1：[知识库兼博客站](https://xugaoyi.com/)
-* 案例2：[仅博客站](https://xugaoyi.github.io/vdoing-demo-blog/)
-* 案例3：[仅知识库](https://xugaoyi.github.io/vdoing-demo-repository/)
-* 案例4：[文档站](https://doc.xugaoyi.com/)
 
 
 ## 快速上手
 
 ```bash
 # clone the project
-git clone https://github.com/xugaoyi/vuepress-theme-vdoing.git
+git clone https://github.com/m2075498242/xiaoma.git
 
 # enter the project directory
 cd vuepress-theme-vdoing
@@ -53,50 +47,32 @@ npm run dev # or yarn dev
 
 期待 [VuePress v2.0](https://github.com/vuepress/vuepress-next) 以及 [VitePress](https://github.com/vuejs/vitepress) 的正式发布...
 
-届时，VuePress 1.x 编译慢的缺点将得到极大的改善。我将会视情况把主题升级至 VuePress v2.0 或 VitePress，也可能两个都升级。目前(2020.10.29)来看还需要一段时间才能让大家使用上基于它们的新版本，还希望大家多多 [:sparkling_heart:支持](https://doc.xugaoyi.com/pages/1b12ed/) 哟，持续关注吧~
 
 ## :sparkling_heart:支持这个项目
 
-如果你正在使用这个项目并感觉良好，或只是想要支持我继续开发，你可以通过如下*任意* 方式支持我：
+
 
 1. *Star* 并 分享这个项目 :rocket:
 2. 保留主题 footer(页脚) 的主题链接 :D
-3. 关注公众号`yqyjs666`，回复`前端资源`，可获取 [前端学习资源](https://github.com/xugaoyi/blog-gitalk-comment/wiki/Front-end-Study)
-<!-- 4. 轻轻点击一次页面广告 ✨ -->
-4. 通过以下二维码 一次性捐款。 我多半会买一杯 ~~咖啡~~ 茶。:tea:
+3. 
+4. 
 
 谢谢！ :heart:
 
 | 微信赞赏 | 微信 | 支付宝 |
 | :---: | :---: | :---: |
-| <img src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200523131533.jpg" alt="赞赏码" width=150> | <img src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200410113708.jpg" alt="Wechat QRcode" width=150>| <img src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200410113707.jpg" alt="Alipay QRcode" width=150> |
+| 
 
-二维码没有正常显示？点 [这里😎](https://doc.xugaoyi.com/pages/1b12ed/)
+
 
 ## 致谢
-:heart:感谢支持这个项目的朋友
 
-:heart:感谢为这个项目贡献代码的朋友 → [Contributors](https://github.com/xugaoyi/vuepress-theme-vdoing/graphs/contributors)
 
 ## 交流群
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <img src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store2@master/img/mmqrcode1646409021986.5m4pb5hehz80.png" class="no-zoom" style="width:120px;margin: 10px;">
-        <p>vdoing微信群(添加我的微信进群)</p>
-      </td>
-      <td align="center" valign="middle">
-        <img src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store@master/qq.3ugglfuuwz00.webp" alt="群号: 694387113" class="no-zoom" style="width:120px;margin: 10px;">
-        <p>vdoing QQ群: 694387113</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
 ## 许可证
-[MIT](https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE)
 
-Copyright (c) 2019-present Evan Xu
+
+
