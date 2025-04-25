@@ -10,6 +10,7 @@
     "publish": "cd ./vdoing && npm publish && cd .. && yarn updateTheme",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D"
   },
+  "homepage": "https://github.com/mjlxiaoma/boke.git",
   "license": "MIT",
   "devDependencies": {
     "dayjs": "^1.9.7",
