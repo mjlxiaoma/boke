@@ -41,4 +41,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # 构建输出目录，根据你的项目调整：
           # Vue/Vite 默认是 `dist`；若是 VuePress 则是 docs/.vuepress/dist
-          publish_dir: docs/.vuepress/dist
+          publish_dir: dist
