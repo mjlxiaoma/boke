@@ -70,11 +70,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       { text: '关于', link: '/about/' },
-      { text: '操作系统-网路-浏览器', 
+      { text: '操作系统-网络-浏览器', 
         link: '/browser/',
         items:[
-          { text: '网路', link: '/pages/530c2b/' },
-          { text: '浏览器', link: '/pages/b7f220/' },
+          { text: '网络', link: '/pages/530c2b/' },
+          { text: '浏览器', link: '/pages/55b8a4/' },
           { text: '操作系统', link: '/pages/77d83b/' }
         ]
       },
