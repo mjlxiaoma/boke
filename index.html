@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="image-container"></div>
+
+    <script>
+      const users = [
+        { name: "Alice", age: 20 },
+        { name: "Bob", age: 22 },
+        { name: "Carol", age: 20 },
+        { name: "David", age: 23 },
+        { name: "Eve", age: 22 },
+      ];
+      let arr = [];
+      const ageCount = users.reduce((acc, user) => {
+        console.log(acc, "acc");
+        console.log(user, "user");
+
+        const age = user.age;
+        acc[age] = (acc[age] || 0) + 1;
+        return acc;
+      }, {});
+      console.log(ageCount);
+      // var reduce = function (nums, fn, init) {
+      //   //return nums.reduce(fn, init);
+      //   let res = init;
+      //   for (const num of nums) {
+      //     // console.log(num, "num");
+      //     res = fn(res, num);
+      //     console.log(res, "res");
+      //   }
+      //   return res;
+      // };
+      // nums = [1, 2, 3, 4];
+      // fn = function sum(accum, curr) {
+      //   return accum + curr * curr;
+      // };
+      // init = 100;
+      // console.log(reduce(nums, fn, init));
+
+      // const arr = [];
+      // let sum = 0;
+      // // sum = arr.reduce((acc, cur) => {
+      // //   return acc + cur;
+      // // });
+      // console.log(sum, "sum");
+      // throw new Error("error");
+      // Output: {
+      //   25: [{ name: 'Alice', age: 25 }, { name: 'David', age: 25 }],
+      //   30: [{ name: 'Bob', age: 30 }, { name: 'Emily', age: 30 }],
+      //   35: [{ name: 'Charlie', age: 35 }]
+      // }
+
+      // var createCounter = function (init) {
+      //   return {
+      //     initVal: init,
+      //     increment: () => ++init,
+      //     decrement: () => --init,
+      //     reset: function () {
+      //       console.log(this, "this");
+
+      //       return (init = this.initVal);
+      //     },
+      //   };
+      // };
+      // const counter = createCounter(5);
+      // console.log(counter.increment());
+      // console.log(counter.reset());
+      // console.log(counter.decrement());
+      // let arr = ["tom", "jerry", "lili", "lili", "tom"]; // 统计数组中每个元素的出现次数
+      // function fun() {
+      //   let obj = {};
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (obj[arr[i]]) {
+      //       obj[arr[i]]++;
+      //     } else {
+      //       obj[arr[i]] = 1;
+      //     }
+      //   }
+      //   return obj;
+      // }
+
+      // console.log(fun());
+    </script>
+  </body>
+</html>
