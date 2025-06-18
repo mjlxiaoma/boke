@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,23 +9,23 @@
     <div id="image-container"></div>
 
     <script>
-      const users = [
-        { name: "Alice", age: 20 },
-        { name: "Bob", age: 22 },
-        { name: "Carol", age: 20 },
-        { name: "David", age: 23 },
-        { name: "Eve", age: 22 },
-      ];
-      let arr = [];
-      const ageCount = users.reduce((acc, user) => {
-        console.log(acc, "acc");
-        console.log(user, "user");
+      // const users = [
+      //   { name: "Alice", age: 20 },
+      //   { name: "Bob", age: 22 },
+      //   { name: "Carol", age: 20 },
+      //   { name: "David", age: 23 },
+      //   { name: "Eve", age: 22 },
+      // ];
+      // let arr = [];
+      // const ageCount = users.reduce((acc, user) => {
+      //   console.log(acc, "acc");
+      //   console.log(user, "user");
 
-        const age = user.age;
-        acc[age] = (acc[age] || 0) + 1;
-        return acc;
-      }, {});
-      console.log(ageCount);
+      //   const age = user.age;
+      //   acc[age] = (acc[age] || 0) + 1;
+      //   return acc;
+      // }, {});
+      // console.log(ageCount);
       // var reduce = function (nums, fn, init) {
       //   //return nums.reduce(fn, init);
       //   let res = init;
@@ -86,6 +86,166 @@
       // }
 
       // console.log(fun());
+      // let c =  Promise.reject("失败一");
+      // let c1 =  Promise.reject("失败二");
+      // let c2 =  Promise.reject("失败三");
+      // let s =  Promise.resolve("成功一");
+      // let s1 =  Promise.resolve("成功二");
+      // let s2 =  Promise.resolve("成功三");
+
+      // Promise.all([c, c1, c2,s,s1,s2])
+      //   .then((res) => {
+      //     console.log(res, "res");
+      //   })
+      //   .catch((err) => {
+      //     console.log(err, "err");
+      //   });
+
+
+      // const promise1 = new Promise((resolve, reject) => {
+      //   setTimeout(resolve, 100, "one");
+      // });
+
+      // const promise2 = new Promise((resolve, reject) => {
+      //   setTimeout(resolve, 100, "two");
+      // });
+
+      // Promise.race([promise2, promise1]).then((value) => {
+      //   console.log(value);
+      //   // Both resolve, but promise2 is faster
+      // }).catch((err)=>{
+      //   console.log(err,"err");
+      // })
+
+      // const promise1 = Promise.reject(0);
+      // const promise2 = new Promise((resolve) => setTimeout(reject, 100, "quick"));
+      // const promise3 = new Promise((resolve) => setTimeout(reject, 500, "slow"));
+
+      // const promises = [promise1, promise2, promise3];
+
+      // Promise.any(promises).then((value) => console.log(value)).catch((err)=>{
+      //   console.log(err)
+      // });
+      const promise1 = Promise.resolve(3);
+      const promise2 = new Promise((resolve, reject) =>
+        setTimeout(reject, 100, "foo"),
+      );
+      const promises = [promise1, promise2];
+      async function fun(){
+        const res = await Promise.allSettled(promises)
+        console.log(res,"res")
+      }
+      fun()
+      
+        
+        // results.forEach((result) => console.log(result.status)),
+
+// Expected output:
+// "fulfilled"
+// "rejected"
+
     </script>
+    
+    <script>
+      // call, apply, bind 使用示例
+      
+      // 定义一个对象
+      const person = {
+        fullName: "张三",
+        age: 30,
+        sayHello: function(greeting, punctuation) {
+          console.log(`${greeting}，我是${this.fullName}，今年${this.age}岁${punctuation}`);
+        }
+      };
+      
+      // 另一个对象
+      const otherPerson = {
+        fullName: "李四",
+        age: 25
+      };
+      
+      // 1. call 方法示例 - 立即调用函数并改变this指向
+      console.log("--- call 方法示例 ---");
+      person.sayHello("你好", "!"); // 原始调用
+      person.sayHello.call(otherPerson, "早上好", "~"); // 使用call改变this指向为otherPerson
+      
+      // 2. apply 方法示例 - 与call类似，但参数以数组形式传入
+      console.log("--- apply 方法示例 ---");
+      person.sayHello.apply(otherPerson, ["下午好", "?"]);
+      
+      // 3. bind 方法示例 - 返回一个新函数，this指向被永久绑定
+      console.log("--- bind 方法示例 ---");
+      const boundFunction = person.sayHello.bind(otherPerson);
+      boundFunction("晚上好", "!");
+      
+      // bind还可以预设部分参数
+      const greetWithPresetParams = person.sayHello.bind(otherPerson, "你好啊");
+      greetWithPresetParams("...");
+      
+      // 实际应用场景示例
+      console.log("--- 实际应用场景 ---");
+      
+      // 1. 借用数组方法
+      const arrayLike = {0: "苹果", 1: "香蕉", 2: "橙子", length: 3};
+      const realArray = Array.prototype.slice.call(arrayLike);
+      console.log(realArray);
+      
+      // 2. 函数柯里化示例
+      function multiply(a, b) {
+        return a * b;
+      }
+      
+      const multiplyByTwo = multiply.bind(null, 2);
+      console.log(multiplyByTwo(4)); // 输出: 8
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .img-item {
+        display: block;
+        height: 300px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <body>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.5053ecdbef05fa7726aa489d27b52e40&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.c5db2c88af1a76f18d0efe02fcded91d&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.c5129de8701c4a933d92cd6bf832b233&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.afe7f6448d6eba0055cd8ce9ac9fdf62&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.e168b9c5da30772083104ed0f4ef0ecf&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.8025ce5a977b3826589022cede69e110&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.a58ae29e32e20a27d498eed19528ee3c&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="">
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.2049b527600b31b2cd863a380be59848&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.9f51912b8b6c19a9891b380ad526db85&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <img class="img-item" src="" data-original="https://th.bing.com/th?id=ORMS.1b6375ea147b5704f9d073a326e1fc2a&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt=""/>
+      <script>
+        const io = new IntersectionObserver((entries) => {
+          console.log(entries, "entries");
+
+          entries.forEach((entry) => {
+            console.log(entry, "entry");
+
+            if (entry.isIntersecting) {
+              entry.target.src = entry.target.dataset.original;
+              entry.target.removeAttribute("data-original");
+              io.unobserve(entry.target);
+            }
+          });
+        });
+        const imgs = document.querySelectorAll("img[data-original]");
+        imgs.forEach((item) => {
+          io.observe(item);
+        });
+      </script>
+    </body>
   </body>
 </html>
