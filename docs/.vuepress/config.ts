@@ -8,9 +8,6 @@ import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
-// 引入图片路径修复插件
-const fixImagePathsPlugin = require('./plugins/fix-image-paths');
-
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   theme: 'vdoing', // 使用npm主题包
   // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
@@ -23,7 +20,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     }
   },
   dest: './dist',   // 设置输出目录
-  base: '/boke/',
+  base: '/boke/',  // 确保base路径正确，所有资源都会基于此路径
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
   // 主题配置
@@ -210,9 +207,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 插件配置
   plugins: <UserPlugins>[
-    // 添加图片路径修复插件
-    fixImagePathsPlugin(),
-    
     'vuepress-plugin-baidu-autopush', // 百度自动推送
 
     [

@@ -24,27 +24,46 @@ function fixImagePaths(mdFilePath) {
   let content = fs.readFileSync(mdFilePath, 'utf8');
   let modified = false;
   
-  // 匹配Markdown图片语法 ![alt](/img/path.jpg) 
-  // 或HTML图片标签 <img src="/img/path.jpg">
-  const mdImageRegex = /!\[.*?\]\((\/img\/[^)]+)\)/g;
-  const htmlImageRegex = /<img[^>]*src=["'](\/img\/[^"']+)["'][^>]*>/g;
-  
-  // 修复Markdown图片语法
-  content = content.replace(mdImageRegex, (match, imgPath) => {
-    if (!imgPath.startsWith('/boke')) {
-      modified = true;
-      return match.replace(imgPath, `/boke${imgPath}`);
+  // 匹配更多种图片路径格式
+  const patterns = [
+    // Markdown图片语法 ![alt](/img/path.jpg)
+    {
+      regex: /!\[.*?\]\((\/img\/[^)]+)\)/g,
+      replacer: (match, imgPath) => {
+        if (!imgPath.startsWith('/boke')) {
+          modified = true;
+          return match.replace(imgPath, `/boke${imgPath}`);
+        }
+        return match;
+      }
+    },
+    // HTML图片标签 <img src="/img/path.jpg">
+    {
+      regex: /<img[^>]*src=["'](\/img\/[^"']+)["'][^>]*>/g,
+      replacer: (match, imgPath) => {
+        if (!imgPath.startsWith('/boke')) {
+          modified = true;
+          return match.replace(imgPath, `/boke${imgPath}`);
+        }
+        return match;
+      }
+    },
+    // ![](/img/path.jpg)格式
+    {
+      regex: /!\[\]\((\/img\/[^)]+)\)/g,
+      replacer: (match, imgPath) => {
+        if (!imgPath.startsWith('/boke')) {
+          modified = true;
+          return match.replace(imgPath, `/boke${imgPath}`);
+        }
+        return match;
+      }
     }
-    return match;
-  });
+  ];
   
-  // 修复HTML图片标签
-  content = content.replace(htmlImageRegex, (match, imgPath) => {
-    if (!imgPath.startsWith('/boke')) {
-      modified = true;
-      return match.replace(imgPath, `/boke${imgPath}`);
-    }
-    return match;
+  // 应用所有替换模式
+  patterns.forEach(pattern => {
+    content = content.replace(pattern.regex, pattern.replacer);
   });
   
   if (modified) {
