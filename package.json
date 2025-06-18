@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
-    "build:prod": "vuepress build docs",
+    "build": "node fix-paths-auto.js && cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
+    "build:prod": "node fix-paths-auto.js && vuepress build docs",
     "deploy": "bash deploy.sh",
     "editFm": "node utils/editFrontmatter.js",
     "baiduPush": "node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
     "publish": "cd ./vdoing && npm publish && cd .. && yarn updateTheme",
-    "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D"
+    "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D",
+    "fix-paths": "node fix-paths-auto.js"
   },
   "homepage": "https://github.com/mjlxiaoma/boke.git",
   "license": "MIT",
